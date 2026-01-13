@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Interactive App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        #count {
+            font-size: 40px;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .add { background: #4CAF50; color: white; }
+        .sub { background: #f44336; color: white; }
+        .color { background: #2196F3; color: white; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>JavaScript App</h1>
+    <p>Counter Value</p>
+    <div id="count">0</div>
+
+    <button class="add" onclick="increase()">Increase</button>
+    <button class="sub" onclick="decrease()">Decrease</button>
+    <br><br>
+    <button class="color" onclick="changeColor()">Change Background</button>
+</div>
+
+<script>
+    let count = 0;
+
+    function increase() {
+        count++;
+        document.getElementById("count").innerText = count;
+    }
+
+    function decrease() {
+        count--;
+        document.getElementById("count").innerText = count;
+    }
+
+    function changeColor() {
+        const colors = ["#FFCDD2", "#C8E6C9", "#BBDEFB", "#FFF9C4", "#D1C4E9"];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.backgroundColor = randomColor;
+    }
+</script>
+
+</body>
+</html>
